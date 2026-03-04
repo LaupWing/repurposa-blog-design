@@ -17,11 +17,11 @@ export function Navbar() {
 
   return (
     <nav className="w-full border-b-2 border-foreground bg-background">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-7xl items-stretch justify-between px-6">
         {/* Logo */}
-        <Link href="#" className="flex items-center gap-2" aria-label="BlogPortal home">
-          <div className="flex items-center justify-center rounded-lg border-2 border-foreground px-4 py-2.5 gap-2.5">
-            <Image src="/logo.svg" alt="Repurposa logo" width={28} height={28} />
+        <Link href="#" className="flex items-center gap-2 -ml-6 self-stretch" aria-label="Repurposa home">
+          <div className="flex items-center justify-center border-x-2 border-foreground px-4 py-3 gap-2.5">
+            <Image src="/logo.svg" alt="Repurposa logo" width={36} height={36} />
             <span className="text-lg font-extrabold tracking-wider text-foreground font-mono uppercase">
               Repurposa
             </span>
@@ -42,15 +42,15 @@ export function Navbar() {
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden items-center md:flex border-2 border-foreground">
+        <div className="hidden items-center md:flex -mr-6 self-stretch">
           <button
-            className="flex h-11 w-11 items-center justify-center border-r-2 border-foreground text-foreground hover:bg-muted transition-colors"
+            className="flex w-14 items-center justify-center border-x-2 border-foreground text-foreground hover:bg-muted transition-colors self-stretch"
             aria-label="Favorites"
           >
             <Heart className="h-5 w-5" strokeWidth={2.5} />
           </button>
           <button
-            className="flex h-11 w-11 items-center justify-center text-foreground hover:bg-muted transition-colors"
+            className="flex w-14 items-center justify-center border-r-2 border-foreground text-foreground hover:bg-muted transition-colors self-stretch"
             aria-label="Search"
           >
             <Search className="h-5 w-5" strokeWidth={2.5} />
@@ -59,7 +59,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="flex h-12 w-12 items-center justify-center border-2 border-foreground text-foreground md:hidden"
+          className="flex w-12 items-center justify-center border-x-2 border-foreground text-foreground -mr-6 self-stretch py-3 md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
