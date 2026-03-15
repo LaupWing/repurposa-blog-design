@@ -20,7 +20,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-stretch justify-between px-6">
         {/* Logo */}
         <Link href="#" className="flex items-center gap-2 -ml-6 self-stretch" aria-label="Repurposa home">
-          <div className="flex items-center justify-center border-x-2 border-foreground px-4 py-3 gap-2.5">
+          <div className="flex items-center justify-center border-r-2 border-foreground px-4 py-3 gap-2.5">
             <Image src="/logo.svg" alt="Repurposa logo" width={36} height={36} />
             <span className="text-lg font-extrabold tracking-wider text-foreground font-mono uppercase">
               Repurposa
@@ -50,7 +50,7 @@ export function Navbar() {
             <Heart className="h-5 w-5" strokeWidth={2.5} />
           </button>
           <button
-            className="flex w-14 items-center justify-center border-r-2 border-foreground text-foreground hover:bg-muted transition-colors self-stretch"
+            className="flex w-14 items-center justify-center text-foreground hover:bg-muted transition-colors self-stretch"
             aria-label="Search"
           >
             <Search className="h-5 w-5" strokeWidth={2.5} />
@@ -59,7 +59,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="flex w-12 items-center justify-center border-x-2 border-foreground text-foreground -mr-6 self-stretch py-3 md:hidden"
+          className="flex w-12 items-center justify-center border-l-2 border-foreground text-foreground -mr-6 self-stretch py-3 md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
