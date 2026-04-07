@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/hero-section"
 import { BlogSection } from "@/components/blog-section"
 import { FeaturedProducts } from "@/components/featured-products"
 import { NewsletterSection } from "@/components/newsletter-section"
+import { NewsletterBanner } from "@/components/newsletter-banner"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <NewsletterSection />
       <BlogSection />
       <FeaturedProducts />
+      <NewsletterBanner />
       <Footer />
     </main>
   )
