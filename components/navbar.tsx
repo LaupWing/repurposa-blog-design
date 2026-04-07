@@ -25,6 +25,14 @@ export function Navbar() {
     setDarkMode(isDark)
   }, [])
 
+  useEffect(() => {
+    function handleEsc(e: KeyboardEvent) {
+      if (e.key === "Escape") { setSearchOpen(false); setSearchQuery("") }
+    }
+    if (searchOpen) document.addEventListener("keydown", handleEsc)
+    return () => document.removeEventListener("keydown", handleEsc)
+  }, [searchOpen])
+
   function toggleDarkMode() {
     const next = !darkMode
     setDarkMode(next)
@@ -144,31 +152,41 @@ export function Navbar() {
           </div>
         </div>
       )}
-      {/* Search Overlay */}
+    </nav>
+
+      {/* Search Modal */}
       {searchOpen && (
-        <div className="border-t-2 border-foreground bg-background">
-          <div className="mx-auto max-w-7xl px-6 py-6">
-            <div className="flex items-center gap-4">
-              <Search className="h-5 w-5 shrink-0 text-muted-foreground" strokeWidth={2.5} />
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                autoFocus
-                className="flex-1 bg-transparent text-lg font-bold text-foreground placeholder:text-muted-foreground focus:outline-none"
-              />
-              <button
-                onClick={() => { setSearchOpen(false); setSearchQuery("") }}
-                className="flex h-10 w-10 items-center justify-center border-2 border-foreground text-foreground hover:bg-muted transition-colors"
-                aria-label="Close search"
-              >
-                <X className="h-5 w-5" strokeWidth={2.5} />
-              </button>
+        <div className="fixed inset-0 z-50">
+          <div
+            className="absolute inset-0 bg-foreground/60 backdrop-blur-sm"
+            onClick={() => { setSearchOpen(false); setSearchQuery("") }}
+          />
+          <div className="relative mx-auto mt-32 max-w-2xl px-6">
+            <div className="border-2 border-foreground bg-background p-6 shadow-[8px_8px_0px_0px_#1a1a1a]">
+              <div className="flex items-center gap-4">
+                <Search className="h-6 w-6 shrink-0 text-muted-foreground" strokeWidth={2.5} />
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  autoFocus
+                  className="flex-1 bg-transparent text-xl font-bold text-foreground placeholder:text-muted-foreground focus:outline-none"
+                />
+                <button
+                  onClick={() => { setSearchOpen(false); setSearchQuery("") }}
+                  className="flex h-10 w-10 items-center justify-center border-2 border-foreground text-foreground hover:bg-muted transition-colors"
+                  aria-label="Close search"
+                >
+                  <X className="h-5 w-5" strokeWidth={2.5} />
+                </button>
+              </div>
+              <p className="mt-4 text-xs text-muted-foreground">
+                Press ESC to close
+              </p>
             </div>
           </div>
         </div>
       )}
-    </nav>
   )
 }
