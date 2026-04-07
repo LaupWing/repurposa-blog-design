@@ -6,7 +6,7 @@ import { Sun, Moon, Search, Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const navLinks = [
-  { label: "Blog", href: "#" },
+  { label: "Blog", href: "/blog" },
   { label: "Products", href: "/products" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -32,7 +32,7 @@ export function Navbar() {
     <nav className="w-full border-b-2 border-foreground bg-background">
       <div className="mx-auto flex max-w-7xl items-stretch justify-between px-6">
         {/* Logo */}
-        <Link href="#" className="flex items-center gap-2 -ml-6 self-stretch" aria-label="Repurposa home">
+        <Link href="/" className="flex items-center gap-2 -ml-6 self-stretch" aria-label="Home">
           <div className="flex items-center justify-center border-r-2 border-foreground px-4 py-3 gap-2.5">
             <svg className="h-12" xmlns="http://www.w3.org/2000/svg" zoomAndPan="magnify" viewBox="0 0 375 149.999998" preserveAspectRatio="xMidYMid meet" version="1.0">
               <g className="fill-black dark:fill-white duration-100" fillOpacity="1">

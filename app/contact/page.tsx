@@ -101,21 +101,21 @@ export default function ContactPage() {
             <div className="mt-6 flex gap-4">
               <Link
                 href="#"
-                className="flex items-center gap-2 border-2 border-foreground bg-card px-5 py-3 text-sm font-bold text-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                className="btn-gradient-text flex items-center gap-2 border-2 border-foreground bg-card px-5 py-3 text-sm font-bold text-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
               >
-                <Youtube className="h-5 w-5" /> YouTube
+                <Youtube className="h-5 w-5" /> <span>YouTube</span>
               </Link>
               <Link
                 href="#"
-                className="flex items-center gap-2 border-2 border-foreground bg-card px-5 py-3 text-sm font-bold text-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                className="btn-gradient-text flex items-center gap-2 border-2 border-foreground bg-card px-5 py-3 text-sm font-bold text-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
               >
-                <Instagram className="h-5 w-5" /> Instagram
+                <Instagram className="h-5 w-5" /> <span>Instagram</span>
               </Link>
               <Link
                 href="#"
-                className="flex items-center gap-2 border-2 border-foreground bg-card px-5 py-3 text-sm font-bold text-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                className="btn-gradient-text flex items-center gap-2 border-2 border-foreground bg-card px-5 py-3 text-sm font-bold text-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
               >
-                <TikTokIcon className="h-5 w-5" /> TikTok
+                <TikTokIcon className="h-5 w-5" /> <span>TikTok</span>
               </Link>
             </div>
           </div>

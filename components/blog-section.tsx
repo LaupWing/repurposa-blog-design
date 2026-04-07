@@ -63,7 +63,7 @@ export function BlogSection() {
             Latest Articles
           </h2>
           <Link
-            href="#"
+            href="/blog"
             className="hidden text-sm font-bold text-foreground underline underline-offset-4 hover:text-primary md:block"
           >
             View All
@@ -96,7 +96,7 @@ export function BlogSection() {
 
         <div className="mt-10 text-center md:hidden">
           <Link
-            href="#"
+            href="/blog"
             className="text-sm font-bold text-foreground underline underline-offset-4 hover:text-primary"
           >
             View All Articles
