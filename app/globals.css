@@ -115,6 +115,35 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-gradient-text:hover span {
+  background: linear-gradient(90deg, #ff4757, #3b82ff, #c026d3, #06d6a0, #ff4757, #3b82ff, #ff4757);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 4s ease infinite;
+}
+
+.btn-gradient-text:hover svg {
+  animation: icon-color-cycle 4s ease infinite;
+  -webkit-text-fill-color: initial;
+}
+
+@keyframes icon-color-cycle {
+  0% { color: #ff4757; stroke: #ff4757; }
+  20% { color: #3b82ff; stroke: #3b82ff; }
+  40% { color: #c026d3; stroke: #c026d3; }
+  60% { color: #06d6a0; stroke: #06d6a0; }
+  80% { color: #3b82ff; stroke: #3b82ff; }
+  100% { color: #ff4757; stroke: #ff4757; }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

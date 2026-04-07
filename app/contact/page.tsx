@@ -85,10 +85,10 @@ export default function ContactPage() {
             <div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 border-2 border-foreground bg-primary px-8 py-4 text-sm font-extrabold uppercase tracking-widest text-primary-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                className="btn-gradient-text inline-flex items-center gap-2 border-2 border-foreground bg-primary px-8 py-4 text-sm font-extrabold uppercase tracking-widest text-primary-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
               >
                 <Mail className="h-4 w-4" strokeWidth={2.5} />
-                Send Message
+                <span>Send Message</span>
               </button>
             </div>
           </form>
