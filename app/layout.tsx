@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: 'Loc Nguyen - Fitness Blog',
   description: 'Training guides, nutrition advice, and honest fitness content. Join 45K+ followers on the journey.',
   icons: {
-    icon: '/logo.svg',
+    icon: '/logo-ln.ico',
   },
 }
 
