@@ -1,9 +1,12 @@
+"use client"
+
 import { TopBar } from "@/components/top-bar"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Info } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
 function CategoryBadge({ category }: { category: string }) {
   return (
@@ -14,6 +17,17 @@ function CategoryBadge({ category }: { category: string }) {
 }
 
 export default function BlogPost() {
+  const [dismissed, setDismissed] = useState(false)
+
+  useEffect(() => {
+    setDismissed(localStorage.getItem("human-notice-dismissed") === "true")
+  }, [])
+
+  function dismiss() {
+    setDismissed(true)
+    localStorage.setItem("human-notice-dismissed", "true")
+  }
+
   return (
     <main className="min-h-screen bg-background">
       <TopBar />
@@ -43,6 +57,24 @@ export default function BlogPost() {
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             Forget the 20-exercise routines. These five compound movements build 90% of your physique. Here&apos;s the science and the programming.
           </p>
+
+          {/* Human-written notice */}
+          {!dismissed && (
+            <div className="mt-8 flex items-start gap-3 border-2 border-foreground bg-[#d4f1f9] p-4">
+              <Info className="h-5 w-5 shrink-0 text-[#1a1a1a] mt-0.5" strokeWidth={2.5} />
+              <div className="flex-1">
+                <p className="text-sm font-medium text-[#1a1a1a]">
+                  Written by an actual human (me). AI only helps with fixing my grammar and spelling, so you don&apos;t have to suffer through my terrible spellling.
+                </p>
+                <button
+                  onClick={dismiss}
+                  className="mt-2 text-xs font-bold text-[#1a1a1a]/60 underline underline-offset-2 hover:text-[#1a1a1a] transition-colors"
+                >
+                  Don&apos;t show again
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Featured Image */}
           <div className="mt-10 aspect-[16/9] w-full overflow-hidden border-2 border-foreground">
