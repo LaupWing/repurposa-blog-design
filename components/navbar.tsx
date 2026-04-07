@@ -41,6 +41,7 @@ export function Navbar() {
   }
 
   return (
+    <>
     <nav className="w-full border-b-2 border-foreground bg-background">
       <div className="mx-auto flex max-w-7xl items-stretch justify-between px-6">
         {/* Logo */}
@@ -188,5 +189,6 @@ export function Navbar() {
           </div>
         </div>
       )}
+    </>
   )
 }
