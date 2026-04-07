@@ -13,8 +13,8 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'BlogPortal - Your Blog Community',
-  description: 'Stay informed & entertained with our blog community. Start exploring our vast library of articles now.',
+  title: 'Loc Nguyen - Fitness Blog',
+  description: 'Training guides, nutrition advice, and honest fitness content. Join 45K+ followers on the journey.',
   icons: {
     icon: '/logo.svg',
   },

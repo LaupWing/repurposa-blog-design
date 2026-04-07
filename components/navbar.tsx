@@ -6,10 +6,10 @@ import { Sun, Moon, Search, Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Subscriptions", href: "#" },
-  { label: "Channels", href: "#" },
-  { label: "Topics", href: "#" },
+  { label: "Blog", href: "#" },
+  { label: "Products", href: "#" },
+  { label: "About", href: "#" },
+  { label: "Contact", href: "#" },
 ]
 
 export function Navbar() {

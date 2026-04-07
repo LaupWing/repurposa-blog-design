@@ -8,19 +8,16 @@ export function HeroSection() {
         {/* Left Content */}
         <div className="flex flex-1 flex-col gap-8">
           <h1 className="text-4xl font-extrabold leading-[1.15] tracking-tight text-foreground md:text-5xl lg:text-[3.5rem] text-balance">
-            Stay informed & entertained
-            <br />
-            with our{" "}
+            Fitness tips,{" "}
             <span className="inline-block border-2 border-foreground bg-accent px-3 py-0.5 text-accent-foreground">
-              blog
-            </span>{" "}
-            <br className="hidden md:block" />
-            community
+              real results
+            </span>
+            <br />
+            & no BS
           </h1>
 
           <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-            Start exploring our vast library of articles now. The world of
-            knowledge, entertainment, and inspiration awaits.
+            Training guides, nutrition advice, and honest content from someone who actually lifts. Join 45K+ followers on the journey.
           </p>
 
           <div>
