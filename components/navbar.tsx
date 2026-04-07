@@ -6,9 +6,9 @@ import { Sun, Moon, Search, Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
   { label: "Products", href: "/products" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ]
 

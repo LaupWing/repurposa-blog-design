@@ -48,10 +48,9 @@ export function Footer() {
           {/* Links */}
           <div className="flex flex-col gap-3">
             <h4 className="text-sm font-extrabold uppercase tracking-widest">Pages</h4>
-            <Link href="#" className="text-sm text-background/60 hover:text-background transition-colors">Blog</Link>
-            <Link href="#" className="text-sm text-background/60 hover:text-background transition-colors">Products</Link>
-            <Link href="#" className="text-sm text-background/60 hover:text-background transition-colors">About</Link>
-            <Link href="#" className="text-sm text-background/60 hover:text-background transition-colors">Contact</Link>
+            <Link href="/blog" className="text-sm text-background/60 hover:text-background transition-colors">Blog</Link>
+            <Link href="/products" className="text-sm text-background/60 hover:text-background transition-colors">Products</Link>
+            <Link href="/contact" className="text-sm text-background/60 hover:text-background transition-colors">Contact</Link>
           </div>
 
           <div className="flex flex-col gap-3">

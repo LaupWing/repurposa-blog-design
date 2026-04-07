@@ -21,8 +21,8 @@ export function HeroSection() {
           </p>
 
           <div>
-            <button className="group inline-flex items-center gap-3 border-2 border-foreground bg-primary px-8 py-4 text-sm font-extrabold uppercase tracking-widest text-primary-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
-              Explore
+            <button className="btn-gradient-text group inline-flex items-center gap-3 border-2 border-foreground bg-primary px-8 py-4 text-sm font-extrabold uppercase tracking-widest text-primary-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
+              <span>Explore</span>
               <ArrowUpRight className="h-5 w-5" strokeWidth={2.5} />
             </button>
           </div>
