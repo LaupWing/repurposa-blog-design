@@ -16,6 +16,8 @@ const navLinks = [
 export function Navbar() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
@@ -91,6 +93,7 @@ export function Navbar() {
           <button
             className="flex w-14 items-center justify-center text-foreground hover:bg-muted transition-colors self-stretch"
             aria-label="Search"
+            onClick={() => setSearchOpen(!searchOpen)}
           >
             <Search className="h-5 w-5" strokeWidth={2.5} />
           </button>
@@ -133,8 +136,34 @@ export function Navbar() {
               <button
                 className="flex h-11 w-11 items-center justify-center text-foreground"
                 aria-label="Search"
+                onClick={() => setSearchOpen(!searchOpen)}
               >
                 <Search className="h-5 w-5" strokeWidth={2.5} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Search Overlay */}
+      {searchOpen && (
+        <div className="border-t-2 border-foreground bg-background">
+          <div className="mx-auto max-w-7xl px-6 py-6">
+            <div className="flex items-center gap-4">
+              <Search className="h-5 w-5 shrink-0 text-muted-foreground" strokeWidth={2.5} />
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                autoFocus
+                className="flex-1 bg-transparent text-lg font-bold text-foreground placeholder:text-muted-foreground focus:outline-none"
+              />
+              <button
+                onClick={() => { setSearchOpen(false); setSearchQuery("") }}
+                className="flex h-10 w-10 items-center justify-center border-2 border-foreground text-foreground hover:bg-muted transition-colors"
+                aria-label="Close search"
+              >
+                <X className="h-5 w-5" strokeWidth={2.5} />
               </button>
             </div>
           </div>
