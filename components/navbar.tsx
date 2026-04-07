@@ -118,41 +118,60 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      {mobileMenuOpen && (
-        <div className="border-t-2 border-foreground px-6 pb-5 pt-4 md:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => {
-              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`text-base font-bold transition-colors ${isActive ? "nav-gradient-active" : "text-foreground hover:text-primary"}`}
-                >
-                  {link.label}
-                </Link>
-              )
-            })}
-            <div className="flex pt-2 border-2 border-foreground w-fit">
-              <button
-                className="flex h-11 w-11 items-center justify-center border-r-2 border-foreground text-foreground"
-                aria-label="Toggle dark mode"
-                onClick={toggleDarkMode}
+      {/* Mobile Nav Overlay */}
+      <div
+        className={`fixed inset-0 z-40 bg-foreground/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+      <div
+        className={`fixed top-0 right-0 z-50 h-full w-72 border-l-2 border-foreground bg-background shadow-[-8px_0px_0px_0px_#1a1a1a] transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        <div className="flex items-center justify-between border-b-2 border-foreground px-6 py-4">
+          <span className="text-sm font-extrabold uppercase tracking-widest text-foreground">Menu</span>
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex h-10 w-10 items-center justify-center border-2 border-foreground text-foreground hover:bg-muted transition-colors"
+            aria-label="Close menu"
+          >
+            <X className="h-5 w-5" strokeWidth={2.5} />
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-1 px-6 py-6">
+          {navLinks.map((link) => {
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`py-3 text-lg font-bold transition-colors border-b border-border ${isActive ? "nav-gradient-active" : "text-foreground hover:text-primary"}`}
               >
-                {darkMode ? <Sun className="h-5 w-5" strokeWidth={2.5} /> : <Moon className="h-5 w-5" strokeWidth={2.5} />}
-              </button>
-              <button
-                className="flex h-11 w-11 items-center justify-center text-foreground"
-                aria-label="Search"
-                onClick={() => setSearchOpen(!searchOpen)}
-              >
-                <Search className="h-5 w-5" strokeWidth={2.5} />
-              </button>
-            </div>
+                {link.label}
+              </Link>
+            )
+          })}
+        </div>
+
+        <div className="px-6">
+          <div className="flex border-2 border-foreground w-fit">
+            <button
+              className="flex h-12 w-12 items-center justify-center border-r-2 border-foreground text-foreground hover:bg-muted transition-colors"
+              aria-label="Toggle dark mode"
+              onClick={toggleDarkMode}
+            >
+              {darkMode ? <Sun className="h-5 w-5" strokeWidth={2.5} /> : <Moon className="h-5 w-5" strokeWidth={2.5} />}
+            </button>
+            <button
+              className="flex h-12 w-12 items-center justify-center text-foreground hover:bg-muted transition-colors"
+              aria-label="Search"
+              onClick={() => { setSearchOpen(!searchOpen); setMobileMenuOpen(false) }}
+            >
+              <Search className="h-5 w-5" strokeWidth={2.5} />
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
 
       {/* Search Modal */}
