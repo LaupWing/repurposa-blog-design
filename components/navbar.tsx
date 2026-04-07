@@ -124,7 +124,7 @@ export function Navbar() {
         onClick={() => setMobileMenuOpen(false)}
       />
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-72 border-l-2 border-foreground bg-background shadow-[-8px_0px_0px_0px_#1a1a1a] transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 left-0 right-0 z-50 w-full border-b-2 border-foreground bg-background shadow-[0px_8px_0px_0px_#1a1a1a] transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-y-0" : "-translate-y-full"}`}
       >
         <div className="flex items-center justify-between border-b-2 border-foreground px-6 py-4">
           <span className="text-sm font-extrabold uppercase tracking-widest text-foreground">Menu</span>
