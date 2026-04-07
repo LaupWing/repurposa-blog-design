@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 
-import { Heart, Search, Menu, X } from "lucide-react"
-import { useState } from "react"
+import { Sun, Moon, Search, Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -14,6 +14,19 @@ const navLinks = [
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains("dark")
+    setDarkMode(isDark)
+  }, [])
+
+  function toggleDarkMode() {
+    const next = !darkMode
+    setDarkMode(next)
+    document.documentElement.classList.toggle("dark", next)
+    localStorage.setItem("theme", next ? "dark" : "light")
+  }
 
   return (
     <nav className="w-full border-b-2 border-foreground bg-background">
@@ -65,9 +78,10 @@ export function Navbar() {
         <div className="hidden items-center md:flex -mr-6 self-stretch">
           <button
             className="flex w-14 items-center justify-center border-x-2 border-foreground text-foreground hover:bg-muted transition-colors self-stretch"
-            aria-label="Favorites"
+            aria-label="Toggle dark mode"
+            onClick={toggleDarkMode}
           >
-            <Heart className="h-5 w-5" strokeWidth={2.5} />
+            {darkMode ? <Sun className="h-5 w-5" strokeWidth={2.5} /> : <Moon className="h-5 w-5" strokeWidth={2.5} />}
           </button>
           <button
             className="flex w-14 items-center justify-center text-foreground hover:bg-muted transition-colors self-stretch"
@@ -103,9 +117,10 @@ export function Navbar() {
             <div className="flex pt-2 border-2 border-foreground w-fit">
               <button
                 className="flex h-11 w-11 items-center justify-center border-r-2 border-foreground text-foreground"
-                aria-label="Favorites"
+                aria-label="Toggle dark mode"
+                onClick={toggleDarkMode}
               >
-                <Heart className="h-5 w-5" strokeWidth={2.5} />
+                {darkMode ? <Sun className="h-5 w-5" strokeWidth={2.5} /> : <Moon className="h-5 w-5" strokeWidth={2.5} />}
               </button>
               <button
                 className="flex h-11 w-11 items-center justify-center text-foreground"
