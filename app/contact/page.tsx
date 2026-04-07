@@ -83,13 +83,16 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 border-2 border-foreground bg-primary px-8 py-4 text-sm font-extrabold uppercase tracking-widest text-primary-foreground shadow-[4px_4px_0px_0px_#1a1a1a] transition-all hover:shadow-[2px_2px_0px_0px_#1a1a1a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
-              >
-                <Mail className="h-4 w-4" strokeWidth={2.5} />
-                Send Message
-              </button>
+              <span className="group relative inline-flex overflow-hidden p-[3px] animate-glow-pulse transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+                <span className="absolute left-1/2 top-1/2 h-[500%] w-[500%] -translate-x-1/2 -translate-y-1/2 animate-gradient-spin bg-[conic-gradient(from_0deg,#c4f52a,#f5c542,#e85d3a,#c4f52a,#22c55e,#06b6d4,#f5c542,#c4f52a)]" />
+                <button
+                  type="submit"
+                  className="relative inline-flex items-center gap-2 bg-primary px-8 py-4 text-sm font-extrabold uppercase tracking-widest text-primary-foreground"
+                >
+                  <Mail className="h-4 w-4" strokeWidth={2.5} />
+                  Send Message
+                </button>
+              </span>
             </div>
           </form>
 
