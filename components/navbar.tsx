@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { Sun, Moon, Search, Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
@@ -13,6 +14,7 @@ const navLinks = [
 ]
 
 export function Navbar() {
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
 
@@ -63,15 +65,18 @@ export function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden items-center gap-10 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm font-bold text-foreground hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-sm font-bold transition-colors ${isActive ? "nav-gradient-active" : "text-foreground hover:text-primary"}`}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
         </div>
 
         {/* Desktop Actions */}
@@ -105,15 +110,18 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="border-t-2 border-foreground px-6 pb-5 pt-4 md:hidden">
           <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-base font-bold text-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`text-base font-bold transition-colors ${isActive ? "nav-gradient-active" : "text-foreground hover:text-primary"}`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
             <div className="flex pt-2 border-2 border-foreground w-fit">
               <button
                 className="flex h-11 w-11 items-center justify-center border-r-2 border-foreground text-foreground"

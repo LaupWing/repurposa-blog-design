@@ -144,6 +144,15 @@
   100% { color: #ff4757; stroke: #ff4757; }
 }
 
+.nav-gradient-active {
+  background: linear-gradient(90deg, #ff4757, #3b82ff, #c026d3, #06d6a0, #ff4757, #3b82ff, #ff4757);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 4s ease infinite;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
